@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using OfficeOpenXml;
+﻿using OfficeOpenXml;
+using FactureTransistor.Clients;
 
 namespace FactureTransistor
 {
@@ -71,5 +69,45 @@ namespace FactureTransistor
                 _package.Dispose(); // Dispose de l'objet pour libérer les ressources
             }
         }
+
+        public List<ClientDTO> LireClientsDepuisExcel()
+        {
+            var clients = new List<ClientDTO>();
+
+            if (_worksheet == null)
+            {
+                throw new InvalidOperationException("La feuille Excel n'est pas ouverte.");
+            }
+
+            // Vérifier que la feuille contient des donnéesSS
+            if (_worksheet.Dimension == null)
+            {
+                throw new InvalidOperationException("La feuille Excel est vide.");
+            }
+
+            // Parcourir chaque ligne à partir de la première ligne de données
+            for (int row = 1; row <= _worksheet.Dimension.End.Row; row++) // Commencer à 2 pour ignorer l'en-tête
+            {
+                string numero = row.ToString();
+                string pronoms = _worksheet.Cells[row, 1]?.Value?.ToString() ?? "";
+                string prenom = _worksheet.Cells[row, 2]?.Value?.ToString() ?? "";
+                string nom = _worksheet.Cells[row, 3]?.Value?.ToString() ?? "";
+                string rue = _worksheet.Cells[row, 4]?.Value?.ToString() ?? "";
+                string ville = _worksheet.Cells[row, 5]?.Value?.ToString() ?? "";
+                string codePostale = _worksheet.Cells[row, 6]?.Value?.ToString() ?? "";
+                string region = _worksheet.Cells[row, 7]?.Value?.ToString() ?? "";
+                string province = _worksheet.Cells[row, 8]?.Value?.ToString() ?? "";
+                string pays = _worksheet.Cells[row, 9]?.Value?.ToString() ?? "";
+                string adresse = _worksheet.Cells[row, 10]?.Value?.ToString() ?? "";
+                string telephone = _worksheet.Cells[row, 11]?.Value?.ToString() ?? "";
+
+                // Ajouter un nouveau client à la liste
+                clients.Add(new ClientDTO(numero,pronoms, prenom, nom, rue, ville, codePostale, region, province, pays, adresse, telephone));
+
+            }
+
+            return clients;
+        }
+
     }
 }

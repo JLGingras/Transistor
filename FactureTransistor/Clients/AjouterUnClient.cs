@@ -49,7 +49,7 @@ namespace FactureTransistor.Clients
 
             excel.EcrireDonnees(client);
             excel.SauvegarderLeFichierExcel(fichier);
-            excel.SauvegarderLeFichierExcel(fichier);
+            excel.FermerExcel();
         }
     }
 }

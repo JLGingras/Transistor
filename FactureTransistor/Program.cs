@@ -1,4 +1,4 @@
-using FactureTransistor.Client;
+using FactureTransistor.Clients;
 
 namespace FactureTransistor
 {
@@ -13,7 +13,7 @@ namespace FactureTransistor
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Clients.AjouterUnClient());
+            Application.Run(new Clients.afficherLaListeDesClients());
         }
     }
 }

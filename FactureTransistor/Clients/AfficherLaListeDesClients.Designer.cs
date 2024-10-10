@@ -1,6 +1,6 @@
 ﻿namespace FactureTransistor.Clients
 {
-    partial class AfficherLaListeDesClients
+    partial class afficherLaListeDesClients
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AfficherLaListeDesClients";
+            clientListView = new ListView();
+            SuspendLayout();
+            // 
+            // clientListView
+            // 
+            clientListView.FullRowSelect = true;
+            clientListView.GridLines = true;
+            clientListView.Location = new Point(12, 12);
+            clientListView.Name = "clientListView";
+            clientListView.Size = new Size(1041, 426);
+            clientListView.TabIndex = 0;
+            clientListView.UseCompatibleStateImageBehavior = false;
+            clientListView.View = View.Details;
+            // 
+            // afficherLaListeDesClients
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1065, 452);
+            Controls.Add(clientListView);
+            Name = "afficherLaListeDesClients";
+            Text = "AfficherLaListeDesClients";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ListView clientListView;
     }
 }
