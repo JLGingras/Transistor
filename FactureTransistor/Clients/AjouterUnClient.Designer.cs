@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             NomGroupBox = new GroupBox();
-            pronomsTextBox = new TextBox();
-            pronomsLabel = new Label();
-            prenomTextBox = new TextBox();
-            prenomLabel = new Label();
             nomTextBox = new TextBox();
             nomLabel = new Label();
+            prenomTextBox = new TextBox();
+            prenomLabel = new Label();
+            pronomsTextBox = new TextBox();
+            pronomsLabel = new Label();
             adresseGroupBox = new GroupBox();
-            codePostaleTextBox = new TextBox();
-            codePostaleLabel = new Label();
-            villeTextBox = new TextBox();
-            villeLabel = new Label();
-            rueTextBox = new TextBox();
-            rueLabel = new Label();
             paysTextBox = new TextBox();
             paysLabel = new Label();
             provinceTextBox = new TextBox();
             provinceLabel = new Label();
             regionTextBox = new TextBox();
             regionLabel = new Label();
+            codePostaleTextBox = new TextBox();
+            codePostaleLabel = new Label();
+            villeTextBox = new TextBox();
+            villeLabel = new Label();
+            rueTextBox = new TextBox();
+            rueLabel = new Label();
             enregistrerClient = new Button();
             boutonAnnuler = new Button();
             contactGroupBox = new GroupBox();
@@ -75,21 +75,21 @@
             NomGroupBox.TabStop = false;
             NomGroupBox.Text = "Nom";
             // 
-            // pronomsTextBox
+            // nomTextBox
             // 
-            pronomsTextBox.Location = new Point(97, 25);
-            pronomsTextBox.Name = "pronomsTextBox";
-            pronomsTextBox.Size = new Size(251, 23);
-            pronomsTextBox.TabIndex = 1;
+            nomTextBox.Location = new Point(97, 86);
+            nomTextBox.Name = "nomTextBox";
+            nomTextBox.Size = new Size(251, 23);
+            nomTextBox.TabIndex = 5;
             // 
-            // pronomsLabel
+            // nomLabel
             // 
-            pronomsLabel.AutoSize = true;
-            pronomsLabel.Location = new Point(6, 28);
-            pronomsLabel.Name = "pronomsLabel";
-            pronomsLabel.Size = new Size(63, 15);
-            pronomsLabel.TabIndex = 0;
-            pronomsLabel.Text = "Pronom(s)";
+            nomLabel.AutoSize = true;
+            nomLabel.Location = new Point(6, 89);
+            nomLabel.Name = "nomLabel";
+            nomLabel.Size = new Size(34, 15);
+            nomLabel.TabIndex = 4;
+            nomLabel.Text = "Nom";
             // 
             // prenomTextBox
             // 
@@ -107,21 +107,21 @@
             prenomLabel.TabIndex = 2;
             prenomLabel.Text = "Prénom";
             // 
-            // nomTextBox
+            // pronomsTextBox
             // 
-            nomTextBox.Location = new Point(97, 86);
-            nomTextBox.Name = "nomTextBox";
-            nomTextBox.Size = new Size(251, 23);
-            nomTextBox.TabIndex = 5;
+            pronomsTextBox.Location = new Point(97, 25);
+            pronomsTextBox.Name = "pronomsTextBox";
+            pronomsTextBox.Size = new Size(251, 23);
+            pronomsTextBox.TabIndex = 1;
             // 
-            // nomLabel
+            // pronomsLabel
             // 
-            nomLabel.AutoSize = true;
-            nomLabel.Location = new Point(6, 89);
-            nomLabel.Name = "nomLabel";
-            nomLabel.Size = new Size(34, 15);
-            nomLabel.TabIndex = 4;
-            nomLabel.Text = "Nom";
+            pronomsLabel.AutoSize = true;
+            pronomsLabel.Location = new Point(6, 28);
+            pronomsLabel.Name = "pronomsLabel";
+            pronomsLabel.Size = new Size(63, 15);
+            pronomsLabel.TabIndex = 0;
+            pronomsLabel.Text = "Pronom(s)";
             // 
             // adresseGroupBox
             // 
@@ -143,54 +143,6 @@
             adresseGroupBox.TabIndex = 6;
             adresseGroupBox.TabStop = false;
             adresseGroupBox.Text = "Adresse";
-            // 
-            // codePostaleTextBox
-            // 
-            codePostaleTextBox.Location = new Point(97, 86);
-            codePostaleTextBox.Name = "codePostaleTextBox";
-            codePostaleTextBox.Size = new Size(251, 23);
-            codePostaleTextBox.TabIndex = 5;
-            // 
-            // codePostaleLabel
-            // 
-            codePostaleLabel.AutoSize = true;
-            codePostaleLabel.Location = new Point(6, 89);
-            codePostaleLabel.Name = "codePostaleLabel";
-            codePostaleLabel.Size = new Size(76, 15);
-            codePostaleLabel.TabIndex = 4;
-            codePostaleLabel.Text = "Code Postale";
-            // 
-            // villeTextBox
-            // 
-            villeTextBox.Location = new Point(97, 57);
-            villeTextBox.Name = "villeTextBox";
-            villeTextBox.Size = new Size(251, 23);
-            villeTextBox.TabIndex = 3;
-            // 
-            // villeLabel
-            // 
-            villeLabel.AutoSize = true;
-            villeLabel.Location = new Point(6, 57);
-            villeLabel.Name = "villeLabel";
-            villeLabel.Size = new Size(29, 15);
-            villeLabel.TabIndex = 2;
-            villeLabel.Text = "Ville";
-            // 
-            // rueTextBox
-            // 
-            rueTextBox.Location = new Point(97, 25);
-            rueTextBox.Name = "rueTextBox";
-            rueTextBox.Size = new Size(251, 23);
-            rueTextBox.TabIndex = 1;
-            // 
-            // rueLabel
-            // 
-            rueLabel.AutoSize = true;
-            rueLabel.Location = new Point(6, 28);
-            rueLabel.Name = "rueLabel";
-            rueLabel.Size = new Size(27, 15);
-            rueLabel.TabIndex = 0;
-            rueLabel.Text = "Rue";
             // 
             // paysTextBox
             // 
@@ -247,6 +199,54 @@
             regionLabel.TabIndex = 6;
             regionLabel.Text = "Région";
             // 
+            // codePostaleTextBox
+            // 
+            codePostaleTextBox.Location = new Point(97, 86);
+            codePostaleTextBox.Name = "codePostaleTextBox";
+            codePostaleTextBox.Size = new Size(251, 23);
+            codePostaleTextBox.TabIndex = 5;
+            // 
+            // codePostaleLabel
+            // 
+            codePostaleLabel.AutoSize = true;
+            codePostaleLabel.Location = new Point(6, 89);
+            codePostaleLabel.Name = "codePostaleLabel";
+            codePostaleLabel.Size = new Size(76, 15);
+            codePostaleLabel.TabIndex = 4;
+            codePostaleLabel.Text = "Code Postale";
+            // 
+            // villeTextBox
+            // 
+            villeTextBox.Location = new Point(97, 57);
+            villeTextBox.Name = "villeTextBox";
+            villeTextBox.Size = new Size(251, 23);
+            villeTextBox.TabIndex = 3;
+            // 
+            // villeLabel
+            // 
+            villeLabel.AutoSize = true;
+            villeLabel.Location = new Point(6, 57);
+            villeLabel.Name = "villeLabel";
+            villeLabel.Size = new Size(29, 15);
+            villeLabel.TabIndex = 2;
+            villeLabel.Text = "Ville";
+            // 
+            // rueTextBox
+            // 
+            rueTextBox.Location = new Point(97, 25);
+            rueTextBox.Name = "rueTextBox";
+            rueTextBox.Size = new Size(251, 23);
+            rueTextBox.TabIndex = 1;
+            // 
+            // rueLabel
+            // 
+            rueLabel.AutoSize = true;
+            rueLabel.Location = new Point(6, 28);
+            rueLabel.Name = "rueLabel";
+            rueLabel.Size = new Size(27, 15);
+            rueLabel.TabIndex = 0;
+            rueLabel.Text = "Rue";
+            // 
             // enregistrerClient
             // 
             enregistrerClient.Location = new Point(142, 441);
@@ -255,6 +255,7 @@
             enregistrerClient.TabIndex = 7;
             enregistrerClient.Text = "Enregistrer";
             enregistrerClient.UseVisualStyleBackColor = true;
+            enregistrerClient.Click += enregistrerClient_Click;
             // 
             // boutonAnnuler
             // 
@@ -264,6 +265,7 @@
             boutonAnnuler.TabIndex = 8;
             boutonAnnuler.Text = "Annuler";
             boutonAnnuler.UseVisualStyleBackColor = true;
+            boutonAnnuler.Click += boutonAnnuler_Click;
             // 
             // contactGroupBox
             // 
