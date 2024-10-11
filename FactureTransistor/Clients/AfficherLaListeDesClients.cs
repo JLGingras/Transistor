@@ -13,6 +13,11 @@ namespace FactureTransistor.Clients
     public partial class afficherLaListeDesClients : Form
     {
 
+        List<ClientDTO> clients = new List<ClientDTO>();
+
+        int index;
+
+
         private void afficherLesClients(List<ClientDTO> clients)
         {
             // Clear previous items and columns
@@ -61,7 +66,12 @@ namespace FactureTransistor.Clients
             // Ensure single selection mode
             clientListView.MultiSelect = false;
 
-     
+            foreach (ColumnHeader column in clientListView.Columns)
+            {
+                column.Width = -2; // -2 automatically adjusts the column to the header and content
+            }
+
+
         }
 
 
@@ -73,10 +83,10 @@ namespace FactureTransistor.Clients
 
             excel.OuvrirExcel("transistor.xlsx", "clients");
 
-            List<ClientDTO> clients = excel.LireClientsDepuisExcel();
+            clients = excel.LireClientsDepuisExcel();
 
             afficherLesClients(clients);
-           
+
 
             excel.SauvegarderLeFichierExcel("transistor.xlsx");
             excel.FermerExcel();
@@ -84,6 +94,21 @@ namespace FactureTransistor.Clients
 
         private void listeDesClients_SelectedIndexChanged(object sender, EventArgs e)
         {
+            index = clientListView.SelectedIndices[0];
+        }
+
+        private void ajouterBouton_Click(object sender, EventArgs e)
+        {
+            AjouterUnClient ajouterUnClient = new AjouterUnClient(null);
+
+            ajouterUnClient.Show();
+        }
+
+        private void modifierBouton_Click(object sender, EventArgs e)
+        {
+            AjouterUnClient ajouterUnClient = new AjouterUnClient(clients[index]);
+
+            ajouterUnClient.Show();
 
         }
     }

@@ -12,14 +12,17 @@ namespace FactureTransistor.Clients
 {
     public partial class AjouterUnClient : Form
     {
-        public AjouterUnClient()
+        ClientDTO _clientDTO;
+        public AjouterUnClient(ClientDTO clientDTO)
         {
+            _clientDTO = clientDTO;
+
             InitializeComponent();
         }
 
         private void boutonAnnuler_Click(object sender, EventArgs e)
         {
-    
+            this.Close();
         }
 
         private void enregistrerClient_Click(object sender, EventArgs e)
@@ -47,9 +50,19 @@ namespace FactureTransistor.Clients
                 telephonetextBox.Text,
             };
 
-            excel.EcrireDonnees(client);
+            if(_clientDTO == null)
+            {
+                excel.EcrireDonneesALaFin(client);
+            }
+            else
+            {
+                excel.EcrireDonneesALaCellule(client, int.Parse(_clientDTO.Numero));
+            }
+            
             excel.SauvegarderLeFichierExcel(fichier);
             excel.FermerExcel();
+
+            this.Close();
         }
     }
 }

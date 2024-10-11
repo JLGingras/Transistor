@@ -33,7 +33,7 @@ namespace FactureTransistor
             }
         }
 
-        public void EcrireDonnees(List<string> donnees)
+        public void EcrireDonneesALaFin(List<string> donnees)
         {
             if (_worksheet == null)
             {
@@ -47,6 +47,20 @@ namespace FactureTransistor
             for (int i = 0; i < donnees.Count; i++)
             {
                 _worksheet.Cells[ligneVide, i + 1].Value = donnees[i]; // i + 1 car les colonnes commencent à 1
+            }
+        }
+
+        public void EcrireDonneesALaCellule(List<string> donnees, int cellule)
+        {
+            if (_worksheet == null)
+            {
+                throw new InvalidOperationException("La feuille Excel n'est pas ouverte.");
+            }
+
+            // Écrire chaque élément de la liste dans une colonne
+            for (int i = 0; i < donnees.Count; i++)
+            {
+                _worksheet.Cells[cellule, i + 1].Value = donnees[i]; // i + 1 car les colonnes commencent à 1
             }
         }
 
