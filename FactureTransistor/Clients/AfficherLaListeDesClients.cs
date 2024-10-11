@@ -13,12 +13,12 @@ namespace FactureTransistor.Clients
     public partial class afficherLaListeDesClients : Form
     {
 
-        List<ClientDTO> clients = new List<ClientDTO>();
+        List<Client> clients = new List<Client>();
 
         int index;
 
 
-        private void afficherLesClients(List<ClientDTO> clients)
+        private void afficherLesClients(List<Client> clients)
         {
             // Clear previous items and columns
             clientListView.Items.Clear();

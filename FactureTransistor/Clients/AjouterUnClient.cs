@@ -12,12 +12,27 @@ namespace FactureTransistor.Clients
 {
     public partial class AjouterUnClient : Form
     {
-        ClientDTO _clientDTO;
-        public AjouterUnClient(ClientDTO clientDTO)
+        Client _clientDTO;
+        public AjouterUnClient(Client clientDTO)
         {
             _clientDTO = clientDTO;
 
             InitializeComponent();
+
+            if (clientDTO != null)
+            {
+
+                pronomsTextBox.Text = clientDTO.Pronoms ?? "";
+                nomTextBox.Text = clientDTO.Nom ?? "";
+                prenomTextBox.Text = clientDTO.Prenom ?? "";
+
+                rueTextBox.Text = clientDTO.Rue ?? "";
+                villeTextBox.Text = clientDTO.Ville ?? "";
+                codePostaleTextBox.Text = clientDTO.CodePostale ?? "";
+
+                adresseEmailTexbox.Text = clientDTO.Adresse ?? "";
+                telephonetextBox.Text = clientDTO.Telephone ?? "";
+            }
         }
 
         private void boutonAnnuler_Click(object sender, EventArgs e)

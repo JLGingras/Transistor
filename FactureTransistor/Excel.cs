@@ -84,9 +84,9 @@ namespace FactureTransistor
             }
         }
 
-        public List<ClientDTO> LireClientsDepuisExcel()
+        public List<Client> LireClientsDepuisExcel()
         {
-            var clients = new List<ClientDTO>();
+            var clients = new List<Client>();
 
             if (_worksheet == null)
             {
@@ -116,7 +116,7 @@ namespace FactureTransistor
                 string telephone = _worksheet.Cells[row, 11]?.Value?.ToString() ?? "";
 
                 // Ajouter un nouveau client à la liste
-                clients.Add(new ClientDTO(numero,pronoms, prenom, nom, rue, ville, codePostale, region, province, pays, adresse, telephone));
+                clients.Add(new Client(numero,pronoms, prenom, nom, rue, ville, codePostale, region, province, pays, adresse, telephone));
 
             }
 

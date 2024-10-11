@@ -2,7 +2,7 @@
 
 namespace FactureTransistor.Clients
 {
-    public class ClientDTO
+    public class Client
     {
         public string Numero { get; set; }
         public string Pronoms { get; set; }
@@ -17,7 +17,7 @@ namespace FactureTransistor.Clients
         public string Adresse { get; set; }
         public string Telephone { get; set; }
 
-        public ClientDTO(string numero,string pronoms, string prenom, string nom, string rue, string ville, string codePostale, string region, string province, string pays, string adresse, string telephone)
+        public Client(string numero,string pronoms, string prenom, string nom, string rue, string ville, string codePostale, string region, string province, string pays, string adresse, string telephone)
         {
             Numero = numero;
             Pronoms = pronoms;
